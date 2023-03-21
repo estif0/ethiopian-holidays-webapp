@@ -108,10 +108,6 @@ class Date {
             this.debre_tabor,
             this.tsome_filseta_mefchiya,
         ]
-        /* 
-        name="John Doe"
-        fName,lName=name.split() 
-        */
     }
     day_name(month_day_string) {
         /* """The function finds the name of the day like Monday,... when the parameter is a month and day string""" */
@@ -177,14 +173,15 @@ class Date {
     day_of_the_holiday(beal) {
 
         /*  Finds the day of the holiday using a dictionary from below  */
-
-        let day_of_the_holiday = this.eywered_eyareg[beal][0] + this.mebaja_hamer
-        let MDHoliday
+        let MDHoliday, day_of_the_holiday;
+        day_of_the_holiday = this.eywered_eyareg[beal][0] + this.mebaja_hamer
         if (day_of_the_holiday > 30) {
             day_of_the_holiday = day_of_the_holiday % 30
         }
 
-        if (this.eywered_eyareg[beal][2] <= day_of_the_holiday <= 30) { MDHoliday = `${this.eywered_eyareg[beal][1][0]} ${day_of_the_holiday}` }
+        if (this.eywered_eyareg[beal][2] <= day_of_the_holiday <= 30) {
+            MDHoliday = `${this.eywered_eyareg[beal][1][0]} ${day_of_the_holiday}`
+        }
         else if (1 <= day_of_the_holiday <= this.eywered_eyareg[beal][3]) {
             MDHoliday = `${this.eywered_eyareg[beal][1][1]} ${day_of_the_holiday}`
         }
@@ -272,40 +269,5 @@ class Date {
 }
 
 year = new Date(2015)
-console.log(year.beale_tsinset)
-/* 
-Inaccurate holidays:
-nenewe
-abiy_tsom
-debre_zeyit
-
-*/
-
-/* 
-this.print_value_list = [
-            this.new_year_day,
-            this.mesqel,
-            this.tsome_lidet,
-            this.gena,
-            this.tsome_gehad,
-            this.timket,
-            this.kana_zegelila,
-            this.tsome_nenewe,
-            this.beale_simeon,
-            this.abiy_tsom,
-            this.debre_zeyit,
-            this.beale_tsinset,
-            this.hosaina,
-            this.seqlet,
-            this.fasika,
-            this.genbot_lideta,
-            this.erkibe_kahinat,
-            this.erget,
-            this.peraclitos,
-            this.tsome_hawariyat,
-            this.tsome_dihinet,
-            this.tsome_filseta,
-            this.debre_tabor,
-            this.tsome_filseta_mefchiya,
-        ]
-*/
+console.log(year.erget)
+/* All the holidays that use day_of_the_holiday() are incorrect */
