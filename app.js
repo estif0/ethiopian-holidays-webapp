@@ -122,21 +122,17 @@ class Date {
         ]
     }
 
-    find_tsome_nenewe(beale_metqe, mebaja_hamer) {
-        /* """The function finds the day of nenewe fasting starts""" */
-        let m, d;
-        [m, d] = beale_metqe.split(" ")
-        if (parseInt(d) == 0 || parseInt(d) == 30) {
-            return `የካቲት ${mebaja_hamer}`
-        }
-        else if (mebaja_hamer > 30) {
-            return `የካቲት ${mebaja_hamer % 30}`
-        }
-        else if (m == `መስከረም`) {
-            return `ጥር ${mebaja_hamer}`
-        }
-        else if (m == `ጥቅምት`) {
-            return `የካቲት ${mebaja_hamer}`
+    find_tsome_nenewe() {
+        // The function finds the day of nenewe fasting starts
+        let [m, d] = this.beale_metqe.split(" ");
+        if (parseInt(d) === 0 || parseInt(d) === 30) {
+            return `የካቲት ${this.mebaja_hamer}`;
+        } else if (this.mebaja_hamer > 30) {
+            return `የካቲት ${this.mebaja_hamer % 30}`;
+        } else if (m === "መስከረም") {
+            return `ጥር ${this.mebaja_hamer}`;
+        } else if (m === "ጥቅምት") {
+            return `የካቲት ${this.mebaja_hamer}`;
         }
     }
 
@@ -154,17 +150,16 @@ class Date {
 
 
     find_beale_metqe() {
-        /*  The function finds Beale Metqe which is needed for further calculations to compute the day of other holidays  */
-        if (30 > this.metqe >= 15) {
-            return `${this.months[1]} ${this.metqe}`
-        }
-        else if (13 > this.metqe >= 2) {
-            return `${this.months[2]} ${this.metqe}`
-        }
-        else {
-            return `${this.months[1]} 30`
+        // The function finds Beale Metqe which is needed for further calculations to compute the day of other holidays
+        if (30 > this.metqe && this.metqe >= 15) {
+            return `${this.months[1]} ${this.metqe}`;
+        } else if (13 > this.metqe && this.metqe >= 2) {
+            return `${this.months[2]} ${this.metqe}`;
+        } else {
+            return `${this.months[1]} 30`;
         }
     }
+
     find_tewsak() {
         /*  Finds Tewsak which is needed for further calculation to find the day of the holidays"" */
         let [m, d] = this.beale_metqe.split(" ");
@@ -189,18 +184,19 @@ class Date {
         return `${this.day_name(MDHoliday)} ${MDHoliday}`
     }
     findDebireZeyit() {
-        /*  finds when the day when debre_zeyit Holiday occurs  */
-        let [month, day] = this.find_tsome_nenewe(this.beale_metqe, this.mebaja_hamer).split(" ")
-        let nenewe = parseInt(day) + 41
-        let increment = 0
+        // finds when the day when debre_zeyit Holiday occurs
+        let [month, day] = this.find_tsome_nenewe().split(" ");
+        let nenewe = parseInt(day) + 41;
+        let increment = 0;
         while (nenewe > 30) {
-            nenewe -= 30
+            nenewe -= 30;
+            increment += 1;
         }
-        increment += 1
-        month = this.months[(this.astifeWer[month] / 2) + increment]
-        let fullDay = `${month} ${nenewe}`
-        return `${this.day_name(fullDay)} ${month} ${nenewe}`
+        month = this.months[Math.floor(this.astifeWer[month] / 2) + increment];
+        let fullDay = `${month} ${nenewe}`;
+        return `${this.day_name(fullDay)} ${month} ${nenewe}`;
     }
+
 
     /*  The following lists and dictionaries are the data used to find the days of the holidays.  */
     elete_tewsag = {
@@ -269,5 +265,5 @@ class Date {
 }
 
 year = new Date(2015)
-console.log(year.erget)
+console.log(year.hosaina)
 /* All the holidays that use day_of_the_holiday() are incorrect */
