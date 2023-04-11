@@ -1,15 +1,3 @@
-function generateTable() {
-    var input = document.getElementById("inputNumber").value;
-    var table = document.getElementById("dynamicTable");
-    for (var i = 0; i < 15; i++) {
-        var row = table.insertRow(i + 1);
-        var cell1 = row.insertCell(0);
-        var cell2 = row.insertCell(1);
-        cell1.innerHTML = input;
-        cell2.innerHTML = parseInt(input) + 2 * i;
-    }
-}
-
 class Date {
     constructor(amete_mihret) {
         this.amete_mihret = amete_mihret;
@@ -174,10 +162,10 @@ class Date {
             day_of_the_holiday = day_of_the_holiday % 30
         }
 
-        if (this.eywered_eyareg[beal][2] <= day_of_the_holiday <= 30) {
+        if (this.eywered_eyareg[beal][2] <= day_of_the_holiday && day_of_the_holiday <= 30) {
             MDHoliday = `${this.eywered_eyareg[beal][1][0]} ${day_of_the_holiday}`
         }
-        else if (1 <= day_of_the_holiday <= this.eywered_eyareg[beal][3]) {
+        else if (1 <= day_of_the_holiday && day_of_the_holiday <= this.eywered_eyareg[beal][3]) {
             MDHoliday = `${this.eywered_eyareg[beal][1][1]} ${day_of_the_holiday}`
         }
 
@@ -260,10 +248,6 @@ class Date {
         "tsome_hawariyat": [29, ["ግንቦት", "ሰኔ"], 16, 20],
         "tsome_dihinet": [1, ["ግንቦት", "ሰኔ"], 18, 22],
     }
-
-
 }
 
 year = new Date(2015)
-console.log(year.hosaina)
-/* All the holidays that use day_of_the_holiday() are incorrect */
