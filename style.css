@@ -8,7 +8,7 @@ h1 {
 table {
     border-collapse: collapse;
     margin: 0 auto 20px;
-    width: 50%;
+    width: 90%;
   }
   
   th, td {
@@ -63,5 +63,46 @@ table {
   
   #submit:hover {
     background-color: #3e8e41;
+  }
+
+/* Styles for screens with a width of 400 or more */
+  @media screen and (max-width: 400px) {
+    table {
+      width: 95%;
+    }
+  }
+  /* Styles for screens with a width of 600px or more */
+@media screen and (min-width: 600px) {
+    table {
+      width: 90%;
+    }
+  }
+  
+  /* Styles for screens with a width of 900px or more */
+  @media screen and (min-width: 900px) {
+    table {
+      width: 70%;
+    }
+  }
+  
+  /* Styles for screens with a width of 1200px or more */
+  @media screen and (min-width: 1200px) {
+    table {
+      width: 65%;
+    }
+  }
+  
+  /* Styles for screens with a width of 1600px or more */
+  @media screen and (min-width: 1600px) {
+    table {
+      width: 60%;
+    }
+  }
+  
+  /* Styles for screens with a width of 2000px or more */
+  @media screen and (min-width: 2000px) {
+    table {
+      width: 50%;
+    }
   }
   
