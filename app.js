@@ -279,14 +279,23 @@ function handleSubmit() {
     }
     // Create a new Date object with the input year
     const year = new Date(inputYear);
+    // Get the table element from the DOM
+    const table = document.getElementById("dynamicTable");
+    // Check if the table already has rows
+    if (table.rows.length > 1) {
+        alert("Table has already been generated");
+        return;
+    }
     // Add the values to the table
     addValuesToTable(year.print_title_list, year.print_value_list);
 }
+
 
 // Attach event listeners to the submit button and input field
 submitButton.addEventListener("click", handleSubmit);
 inputNumber.addEventListener("keydown", function (event) {
     if (event.key === "Enter") {
         handleSubmit();
+        inputNumber.blur();
     }
 });
