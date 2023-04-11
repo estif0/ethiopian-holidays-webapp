@@ -250,4 +250,29 @@ class Date {
     }
 }
 
-year = new Date(2015)
+const submitButton = document.getElementById("submit");
+const inputNumber = document.getElementById("inputNumber");
+
+function addValuesToTable(list1, list2) {
+    const table = document.getElementById("dynamicTable");
+    for (let i = 0; i < Math.max(list1.length, list2.length); i++) {
+        const row = table.insertRow(-1);
+        const cell1 = row.insertCell(0);
+        const cell2 = row.insertCell(1);
+        cell1.innerHTML = list1[i] || '';
+        cell2.innerHTML = list2[i] || '';
+    }
+}
+
+function handleSubmit() {
+    const InputYear = inputNumber.value;
+    year = new Date(InputYear)
+    addValuesToTable(year.print_title_list, year.print_value_list)
+}
+
+submitButton.addEventListener("click", handleSubmit);
+inputNumber.addEventListener("keydown", function (event) {
+    if (event.key === "Enter") {
+        handleSubmit();
+    }
+});
