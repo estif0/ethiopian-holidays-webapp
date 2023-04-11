@@ -250,11 +250,15 @@ class Date {
     }
 }
 
+// Get the submit button and input field from the DOM
 const submitButton = document.getElementById("submit");
 const inputNumber = document.getElementById("inputNumber");
 
+// Function to add the values to the table
 function addValuesToTable(list1, list2) {
+    // Get the table element from the DOM
     const table = document.getElementById("dynamicTable");
+    // Loop through the lists and insert the values into the table
     for (let i = 0; i < Math.max(list1.length, list2.length); i++) {
         const row = table.insertRow(-1);
         const cell1 = row.insertCell(0);
@@ -264,12 +268,22 @@ function addValuesToTable(list1, list2) {
     }
 }
 
+// Function to handle form submission
 function handleSubmit() {
-    const InputYear = inputNumber.value;
-    year = new Date(InputYear)
-    addValuesToTable(year.print_title_list, year.print_value_list)
+    // Get the value from the input field and convert it to a number
+    const inputYear = parseInt(inputNumber.value);
+    // Check if the input is a valid year (not empty and not negative)
+    if (!inputYear || inputYear < 0) {
+        alert("Please enter a valid year");
+        return;
+    }
+    // Create a new Date object with the input year
+    const year = new Date(inputYear);
+    // Add the values to the table
+    addValuesToTable(year.print_title_list, year.print_value_list);
 }
 
+// Attach event listeners to the submit button and input field
 submitButton.addEventListener("click", handleSubmit);
 inputNumber.addEventListener("keydown", function (event) {
     if (event.key === "Enter") {
