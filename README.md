@@ -15,6 +15,10 @@ Welcome to the Ethiopian Holidays website! This website is designed to provide y
 3. Click the "Submit" button.
 4. The website will generate a list of important dates for the Ethiopian Orthodox Church for the given year.
 
+## Accessing the Website
+
+To access the website, simply click [here](https://estif0.github.io/ethiopian-holidays-webapp/){:target="\_blank"}. This will open the website in a new tab.
+
 ## Contributions
 
 Contributions to this project are welcome and encouraged. If you find an error in the calendar or have a suggestion for a feature, please create a pull request with your changes.
@@ -27,4 +31,4 @@ This project is licensed under the MIT License. Please see the `LICENSE` file fo
 
 This project was inspired by the rich history and traditions of the Ethiopian Orthodox Church, and we hope it serves as a valuable resource for anyone interested in learning more about this ancient faith. For anyone interested in learninig how the calculations were made check out the link below.
 
-<a href="https://drive.google.com/file/d/1e7AukagokWlEiuz_0YtZ8Oz3RcUoQaLC/view?usp=sharing" target="_blank">Click Here!</a>
+<a href="https://drive.google.com/file/d/1e7AukagokWlEiuz_0YtZ8Oz3RcUoQaLC/view?usp=sharing" target="_blank">Source</a>
