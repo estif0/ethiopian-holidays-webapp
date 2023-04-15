@@ -17,7 +17,7 @@ Welcome to the Ethiopian Holidays website! This website is designed to provide y
 
 ## Accessing the Website
 
-To access the website, simply click [here](https://estif0.github.io/ethiopian-holidays-webapp/){:target="\_blank"}. This will open the website in a new tab.
+To access the website, simply click <a href="https://estif0.github.io/ethiopian-holidays-webapp/" target="_blank">Click here to go to the webite</a>. This will open the website in a new tab.
 
 ## Contributions
 
