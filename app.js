@@ -5,15 +5,20 @@ class Date {
         this.amete_wengel = this.amete_wengel_list[this.amete_alem % 4];
         this.metene_rabit = Math.floor(this.amete_alem / 4);
         this.amete_total = this.amete_alem + this.metene_rabit + 2;
-        this.new_year_day = (`${this.new_year_day_name[this.amete_total % 7]} ${this.months[1]} 1`)
+        this.new_year_day = (
+            `${this.new_year_day_name[this.amete_total % 7]} ${this.months[1]} 1`
+        )
         this.medeb = this.amete_alem % 19
         this.wenber = this.medeb == 0 ? 18 : this.medeb - 1
-        this.abeqte = (this.wenber * 11 >= 30 ? (this.wenber * 11) % 30 : this.wenber * 11)
+        this.abeqte = (
+            this.wenber * 11 >= 30 ? (this.wenber * 11) % 30 : this.wenber * 11
+        )
         this.metqe = 30 - this.abeqte
         this.beale_metqe = this.find_beale_metqe()
         this.tewsak = this.find_tewsak()
-        this.mebaja_hamer = ((this.tewsak == 0 || this.tewsak == 30) ? this.tewsak : (this.metqe + this.tewsak) % 30)
-        this.tsome_nenewe = `${this.day_name(this.find_tsome_nenewe(this.beale_metqe, this.mebaja_hamer))} ${thi.find_tsome_nenewe(this.beale_metqe, this.mebaja_hamer)}`
+        this.mebaja_hamer = ((this.tewsak == 0 || this.tewsak == 30) ? this.tewsak : (this.metqe + this.tewsak) % 30
+        )
+        this.tsome_nenewe = `${this.day_name(this.find_tsome_nenewe(this.beale_metqe, this.mebaja_hamer))} ${this.find_tsome_nenewe(this.beale_metqe, this.mebaja_hamer)}`
         this.abiy_tsom = this.day_of_the_holiday("abiy_tsom")
         this.hosaina = this.day_of_the_holiday("hosaina")
         this.seqlet = this.day_of_the_holiday("seqlet")
@@ -23,7 +28,8 @@ class Date {
         this.peraclitos = this.day_of_the_holiday("peraclitos")
         this.tsome_hawariyat = this.day_of_the_holiday("tsome_hawariyat")
         this.tsome_dihinet = this.day_of_the_holiday("tsome_dihinet")
-        this.gena = ((this.amete_wengel != "ዘመነ ዮሐንስ") ? `${this.day_name('ታህሳስ 29')} ታህሳስ 29` : `${this.day_name('ታህሳስ 28')} ታህሳስ 28`)
+        this.gena = ((this.amete_wengel != "ዘመነ ዮሐንስ") ? `${this.day_name('ታህሳስ 29')} ታህሳስ 29` : `${this.day_name('ታህሳስ 28')} ታህሳስ 28`
+        )
         this.timket = `${this.day_name('ጥር 11')} ጥር 11`
         this.kana_zegelila = `${this.day_name('ጥር 12')} ጥር 12`
         this.mesqel = `${this.day_name('መስከረም 17')} መስከረም 17`
@@ -92,7 +98,7 @@ class Date {
         ]
     }
     day_name(month_day_string) {
-        /* The function finds the name of the day like Monday,... when the parameter is a month and day string */
+        /* """The function finds the name of the day like Monday,... when the parameter is a month and day string""" */
         let [month, day] = month_day_string.split(" ")
         return this.name_of_the_day[
             (
@@ -119,7 +125,7 @@ class Date {
     }
 
     find_name_of_the_day(day, month) {
-        /* Finds the name of the day like the first function but the parameter is a separated day and month variable */
+        /* """Finds the name of the day like the first function but the parameter is a separated day and month variable""" */
         return this.name_of_the_day[
             (
                 this.yon[this.new_year_day_name[this.amete_total % 7]]
@@ -143,7 +149,7 @@ class Date {
     }
 
     find_tewsak() {
-        /*  Finds Tewsak which is needed for further calculation to find the day of the holidays */
+        /*  Finds Tewsak which is needed for further calculation to find the day of the holidays"" */
         let [m, d] = this.beale_metqe.split(" ");
         return this.elete_tewsag[this.find_name_of_the_day(parseInt(d), m)];
     }
