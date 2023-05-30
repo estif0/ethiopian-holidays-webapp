@@ -110,10 +110,10 @@ class Date {
     find_tsome_nenewe() {
         // The function finds the day of nenewe fasting starts
         let [m, d] = this.beale_metqe.split(" ");
-        if (parseInt(d) === 0 || parseInt(d) === 30) {
-            return `የካቲት ${this.mebaja_hamer}`;
-        } else if (this.mebaja_hamer > 30) {
+        if (this.mebaja_hamer > 30) {
             return `የካቲት ${this.mebaja_hamer % 30}`;
+        } else if (parseInt(d) === 0 || parseInt(d) === 30) {
+            return `የካቲት ${this.mebaja_hamer}`;
         } else if (m === "መስከረም") {
             return `ጥር ${this.mebaja_hamer}`;
         } else if (m === "ጥቅምት") {
