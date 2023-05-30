@@ -279,5 +279,3 @@ inputNumber.addEventListener("keydown", function (event) {
         inputNumber.blur();
     }
 });
-
-// Check tsome nenewe function
