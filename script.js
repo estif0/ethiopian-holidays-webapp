@@ -165,7 +165,6 @@ class Date {
         }
         let month_day = `${m} ${Cdate}`;
         return `${this.day_name(month_day)}, ${month_day}`;
-
     }
 
     /*  The following lists and dictionaries are the data used to find the days of the holidays.  */
